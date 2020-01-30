@@ -38,9 +38,9 @@ public class Airport {
     public PassengerPlane getPassengerPlaneWithMaxPassengersCapacity() {
         List<PassengerPlane> passengerPlanes = getPassengerPlane();
         PassengerPlane planeWithMaxCapacity = passengerPlanes.get(0);
-        for (int i = 0; i < passengerPlanes.size(); i++) {
-            if (passengerPlanes.get(i).getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
-                planeWithMaxCapacity = passengerPlanes.get(i);
+        for (PassengerPlane passengerPlane:passengerPlanes) {
+            if (passengerPlane.getPassengersCapacity()>planeWithMaxCapacity.getPassengersCapacity()){
+                planeWithMaxCapacity = passengerPlane;
             }
         }
         return planeWithMaxCapacity;
@@ -49,10 +49,9 @@ public class Airport {
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
         List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-        for (int i = 0; i < militaryPlanes.size(); i++) {
-            MilitaryPlane plane = militaryPlanes.get(i);
-            if (plane.getType() == MilitaryType.TRANSPORT) {
-                transportMilitaryPlanes.add(plane);
+        for (MilitaryPlane militaryPlane : militaryPlanes){
+            if (militaryPlane.getType().equals(MilitaryType.TRANSPORT)){
+                transportMilitaryPlanes.add(militaryPlane);
             }
         }
         return transportMilitaryPlanes;
@@ -61,10 +60,9 @@ public class Airport {
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
         List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-        for (int i = 0; i < militaryPlanes.size(); i++) {
-            MilitaryPlane plane = militaryPlanes.get(i);
-            if (plane.getType() == MilitaryType.BOMBER) {
-                bomberMilitaryPlanes.add(plane);
+        for (MilitaryPlane militaryPlane : militaryPlanes){
+            if (militaryPlane.getType().equals(MilitaryType.BOMBER)) {
+                bomberMilitaryPlanes.add(militaryPlane);
             }
         }
         return bomberMilitaryPlanes;
