@@ -6,8 +6,7 @@ import planes.PassengerPlane;
 import planes.Plane;
 
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 public class Runner {
     static List<Plane> planes = Arrays.asList(
             new PassengerPlane("Boeing-737", 900, 12000, 60500, 164),
