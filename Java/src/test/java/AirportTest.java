@@ -53,10 +53,10 @@ public class AirportTest {
     public void testIsSortingCorrect() {
         List<? extends Plane> planesSortedByMaxLoadCapacity = new Airport(planes).sortByMaxLoadCapacity().getPlanes();
         for (int i = 0; i < planesSortedByMaxLoadCapacity.size() - 1; i++) {
-            Plane currentPlane = planesSortedByMaxLoadCapacity.get(i);
-            Plane nextPlane = planesSortedByMaxLoadCapacity.get(i + 1);
-            if (currentPlane.getMaxLoadCapacity() > nextPlane.getMaxLoadCapacity()) {
-                Assert.fail("Sorting incorrect! currentPlane.getMaxLoadCapacity() > nextPlane.getMaxLoadCapacity()\n"+
+            int currentPlaneMaxloadCapacity = planesSortedByMaxLoadCapacity.get(i).getMaxLoadCapacity();
+            int nextPlaneMaxLoadCapacity = planesSortedByMaxLoadCapacity.get(i + 1).getMaxLoadCapacity();
+            if (currentPlaneMaxloadCapacity >= nextPlaneMaxLoadCapacity) {
+                Assert.fail("Sorting incorrect! currentPlaneMaxloadCapacity > nextPlaneMaxLoadCapacity\n"+
                         "Error position = " + i);
                 break;
             }
