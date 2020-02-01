@@ -56,7 +56,7 @@ public class AirportTest {
             int currentPlaneMaxloadCapacity = planesSortedByMaxLoadCapacity.get(i).getMaxLoadCapacity();
             int nextPlaneMaxLoadCapacity = planesSortedByMaxLoadCapacity.get(i + 1).getMaxLoadCapacity();
             if (currentPlaneMaxloadCapacity >= nextPlaneMaxLoadCapacity) {
-                Assert.fail("Sorting incorrect! currentPlaneMaxloadCapacity >= nextPlaneMaxLoadCapacity\n"+
+                Assert.fail("Sorting incorrect! currentPlaneMaxloadCapacity > nextPlaneMaxLoadCapacity\n"+
                         "Error position = " + i);
                 break;
             }
